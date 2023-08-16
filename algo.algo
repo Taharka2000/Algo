@@ -1,0 +1,24 @@
+ALGORITHM compteur_de_lettre
+VAR
+    phrase:=STRING
+    n_carc,nbr_mot,nbr_voy:=INTEGER
+    tab: ARRAY_OF STRING[12];
+BEGIN
+    Write("Donnez une phrase")
+    read(phrase);
+    n_carc=phrase.length
+    Write("Le nombre de caractere est de:",n_carc)
+    nbr_mot=1
+    nbr_voy=0
+    tab:=[a,e,i,o,u,y,A,E,I,O,U,Y] 
+    FOR i FROM 0 TO n_carc STEP step  DO
+        IF (phrase[i]===" ") THEN
+        nbr_mot=nbr_mot+1
+        END_IF
+        IF (phrase[i] in tab) THEN
+            nbr_voy=nbr_voy+1
+        END_IF
+    END_FOR
+    Write("Le nombre de mot est de :",nbr_mot)
+    Write("Le nombre de voyelle est de:",nbr_voy) 
+END
